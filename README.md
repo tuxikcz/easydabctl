@@ -41,22 +41,36 @@ Quick start
 The current default device address is 10.26.76.125 and the default HTTP username is admin. For other devices, provide --host and optionally --user:
 # Read-only diagnostics
 easydabctl --host 192.168.1.50 status
+
 easydabctl --host 192.168.1.50 --raw status
+
 easydabctl --host 192.168.1.50 --json status
+
 easydabctl --host 192.168.1.50 amplitude
+
 easydabctl --host 192.168.1.50 config
+
 The program normally asks for the HTTP password using /dev/tty without echoing it. It does not accept a password directly as a CLI argument.
 Runtime control
 Warning: The following commands affect a real transmitter. An enabled RF frontend can drive an external PA. Verify the antenna system or correctly rated 50-ohm dummy load, PA interlocks, and local operating authorization first.
 # Device-changing operations; --yes is mandatory
+
 easydabctl --host 192.168.1.50 --yes rf off
+
 easydabctl --host 192.168.1.50 --yes rf on
+
 easydabctl --host 192.168.1.50 --yes eti off
+
 easydabctl --host 192.168.1.50 --yes eti client
+
 easydabctl --host 192.168.1.50 --yes eti server
+
 easydabctl --host 192.168.1.50 --yes eti reconnect
+
 easydabctl --host 192.168.1.50 --yes amplitude set 122
+
 easydabctl --host 192.168.1.50 --yes restart
+
 - eti client and eti server activate runtime socket modes; they do not change persistent flash configuration.
 - eti reconnect checks that the saved configuration identifies TCP Client mode (0x04) before sending its runtime activation command. It is not an unconditional disconnect-and-reconnect sequence.
 - amplitude set N accepts 1–255; value 00 is reserved by this protocol for reading amplitude. The change is runtime-only and does not imply an RF power level.
