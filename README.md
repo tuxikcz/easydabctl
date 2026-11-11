@@ -19,14 +19,21 @@ Requirements
 - libcurl development headers and library
 - Network access to the EasyDAB's HTTP port (usually TCP/80)
 On Debian / Raspberry Pi OS:
+
 sudo apt update
+
 sudo apt install g++ make libcurl4-openssl-dev
+
 Build and install
+
 git clone https://github.com/tuxikcz/easydabctl.git
+
 cd easydabctl
 make
 sudo install -m 0755 easydabctl /usr/local/bin/easydabctl
-Replace the example clone URL with the actual repository URL after publishing. Alternatively, extract the source release archive and run make in its project directory. Compile on the target Raspberry Pi; the supplied source archive does not require a prebuilt executable.
+
+Compile on the target Raspberry 
+Pi; the supplied source archive does not require a prebuilt executable.
 
 Check the command summary:
 easydabctl --help
