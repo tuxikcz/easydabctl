@@ -22,7 +22,7 @@ On Debian / Raspberry Pi OS:
 sudo apt update
 sudo apt install g++ make libcurl4-openssl-dev
 Build and install
-git clone https://github.com/YOUR_GITHUB_USERNAME/easydabctl.git
+git clone https://github.com/tuxikcz/easydabctl.git
 cd easydabctl
 make
 sudo install -m 0755 easydabctl /usr/local/bin/easydabctl
